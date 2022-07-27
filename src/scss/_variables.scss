@@ -1,0 +1,453 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #f3f3f3;
+$gray-400: #eee;
+$gray-500: #ddd;
+$gray-600: #a9a9a9;
+$gray-700: #7e7e7e;
+$gray-800: #343a40 !default;
+$gray-900: #292929;
+$black:    #000 !default;
+
+$grays: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue:                #1654b9;
+$blue-light:          #4e91ff;
+// tag
+$blue-lake:           #39c8d0;
+// tag hover
+$blue-turquoise:      #00afb8;
+$indigo:              #6610f2 !default;
+$purple:              #78269f;
+$pink:                #e83e8c !default;
+$red:                 #ea475b;
+$orange:              #ffeedf;
+$yellow:              #ffc31b;
+$green:               #28a745 !default;
+$green-apple:         #92cf53;
+$green-grass:         #6fb827;
+$teal:                #20c997 !default;
+$cyan:                #17a2b8 !default;
+
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":             $blue,
+    "blue-light":       $blue-light,
+    "blue-lake":        $blue-lake,
+    "blue-turquoise":   $blue-turquoise,
+    "indigo":           $indigo,
+    "purple":           $purple,
+    "pink":             $pink,
+    "red":              $red,
+    "orange":           $orange,
+    "yellow":           $yellow,
+    "green":            $green,
+    "green-apple":      $green-apple,
+    "green-grass":      $green-grass,
+    "teal":             $teal,
+    "cyan":             $cyan,
+    "white":            $white,
+    "gray-darker":      $gray-700,
+    "gray-dark":        $gray-600,
+    "gray":             $gray-500,
+    "gray-light":       $gray-400,
+    "gray-lighter":     $gray-300,
+  ),
+  $colors
+);
+
+$primary:       #ff7800;
+$secondary:     #ff9100;
+$tertiary:      #ffd6b2;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $red;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":        $primary,
+    "blue-lake":      $blue-lake,
+    "secondary":      $secondary,
+    "tertiary":       $tertiary,
+    "success":        $success,
+    "info":           $info,
+    "warning":        $warning,
+    "danger":         $danger,
+    "light":          $light,
+    "white":          $white,
+    "dark":           $dark,
+    "gray-dark":      $gray-600,
+    "gray-darker":    $gray-700,
+    "gray-deep-dark": $gray-900,
+    "gray-score" :    $gray-300
+  ),
+  $theme-colors
+);
+
+// // Set a specific jump point for requesting color jumps
+// $theme-color-interval:      8% !default;
+
+// // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+// $yiq-contrasted-threshold:  150 !default;
+
+// // Customize the light and dark text colors for use in our YIQ color contrast function.
+// $yiq-text-dark:             $gray-900 !default;
+// $yiq-text-light:            $white !default;
+
+
+// // Options
+// //
+// // Quickly modify global styling by enabling or disabling optional features.
+
+// $enable-caret:                                true !default;
+// $enable-rounded:                              true !default;
+// $enable-shadows:                              false !default;
+// $enable-gradients:                            false !default;
+// $enable-transitions:                          true !default;
+// $enable-prefers-reduced-motion-media-query:   true !default;
+// $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
+// $enable-grid-classes:                         true !default;
+// $enable-print-styles:                         true !default;
+// $enable-validation-icons:                     true !default;
+
+
+// // Spacing
+// //
+// // Control the default styling of most Bootstrap elements by modifying these
+// // variables. Mostly focused on spacing.
+// // You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 12px;
+$spacers: ();
+// // stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: round($spacer * .33),
+    2: round($spacer * .66),
+    3: $spacer,
+    4: round($spacer * 1.33),
+    5: round($spacer * 1.66),
+    6: round($spacer * 2),
+    7: round($spacer * 2.33),
+    8: round($spacer * 2.66),
+  ),
+  $spacers
+);
+
+ // This variable affects the `.h-*` and `.w-*` classes.
+ $sizes: () !default;
+ // stylelint-disable-next-line scss/dollar-variable-default
+ $sizes: map-merge(
+   (
+     20: 20%,
+     // 25: 25%,
+     40: 40%,
+     // 50: 50%,
+     60: 60%,
+     // 75: 75%,
+     80: 80%,
+     // 100: 100%,
+     // auto: auto
+   ),
+   $sizes
+ );
+
+
+// // Body
+// //
+// // Settings for the `<body>` element.
+
+// $body-bg:                   $white !default;
+$body-color:                $gray-900;
+
+
+// Links
+
+// Style anchor elements.
+
+$link-color:                              $gray-700;
+$link-decoration:                         none;
+$link-hover-color:                        theme-color("primary");
+$link-hover-decoration:                   none;
+// // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+// $emphasized-link-hover-darken-percentage: 15% !default;
+
+// // Paragraphs
+// //
+// // Style p element.
+
+// $paragraph-margin-bottom:   1rem !default;
+
+
+// // Grid breakpoints
+// //
+// // Define the minimum dimensions at which your layout will change,
+// // adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 768px,
+    md: 1024px,
+    lg: 1366px,
+    xl: 1680px,
+    // xxl: 1920px
+  ),
+  $grid-breakpoints
+);
+
+// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+// @include _assert-starts-at-zero($grid-breakpoints);
+
+$grid-gutter-width:           24px;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: () ;
+// stylelint-disable-next-line scss/dollar-variable-default
+$container-max-widths: map-merge(
+  (
+    sm: 640px,
+    md: 960px + $grid-gutter-width,
+    lg: 1200px + $grid-gutter-width,
+    xl: 1320px + $grid-gutter-width,
+    // xxl: 1768px + $grid-gutter-width
+  ),
+  $container-max-widths
+);
+
+// @include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// // Grid columns
+// //
+// // Set the number of columns and specify the width of the gutters.
+
+// $grid-columns:                12 !default;
+// $grid-gutter-width:           24px;
+
+
+// // Components
+// //
+// // Define common padding and border radius sizes and more.
+
+// $line-height-lg:              1.5 !default;
+// $line-height-sm:              1.5 !default;
+
+// $border-width:                1px !default;
+$border-color:                $gray-400;
+
+$border-radius:               4px;
+$border-radius-lg:            6px;
+$border-radius-sm:            2px;
+
+// $rounded-pill:                50rem !default;
+
+// $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+// $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+// $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+
+// $component-active-color:      $white !default;
+// $component-active-bg:         theme-color("primary") !default;
+
+// $caret-width:                 .3em !default;
+
+// $transition-base:             all .2s ease-in-out !default;
+// $transition-fade:             opacity .15s linear !default;
+// $transition-collapse:         height .35s ease !default;
+
+// $embed-responsive-aspect-ratios: () !default;
+// // stylelint-disable-next-line scss/dollar-variable-default
+// $embed-responsive-aspect-ratios: join(
+//   (
+//     (21 9),
+//     (16 9),
+//     (3 4),
+//     (1 1),
+//   ),
+//   $embed-responsive-aspect-ratios
+// );
+
+// // Fonts
+// //
+// // Font, line-height, and color for body text, headings, and more.
+
+// // stylelint-disable value-keyword-case
+// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// $font-family-base:            Arial, "Noto Sans TC", "微軟正黑體", "Microsoft JhengHei", Roboto, "PingFangTC", sans-serif;
+$font-family-base:            Arial, "MsJhengHeiBold", "微軟正黑體", "Microsoft JhengHei", Roboto, "PingFangTC", sans-serif;
+// // stylelint-enable value-keyword-case
+
+$font-size-base:              18px; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.125);
+$font-size-sm:                14px;
+$font-xx-large: 36px;
+$font-x-large: 28px;
+$font-large: 24px;
+$font-larger: 20px; // h1
+$font-medium: 18px; // h2
+$font-small: 16px; // h3
+$font-smaller: 14px; // h4
+$font-x-small: 12px; // h5
+$font-xx-small: 10px; // h6
+
+$font-sizes: ();
+$font-sizes: map-merge(
+  (
+    "font-xx-large": $font-xx-large,
+    "font-x-large": $font-x-large,
+    "font-large": $font-large,
+    "font-larger": $font-larger,
+    "font-medium": $font-medium,
+    "font-small": $font-small,
+    "font-smaller": $font-smaller,
+    "font-x-small": $font-x-small,
+    "font-xx-small": $font-xx-small
+  ),
+  $font-sizes
+);
+
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 ;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$font-weights: ();
+$font-weights: map-merge(
+  (
+    "font-weight-bolder": $font-weight-bolder,
+    "font-weight-bold": $font-weight-bold,
+    "font-weight-normal": $font-weight-normal,
+    "font-weight-light": $font-weight-light,
+    "font-weight-lighter": $font-weight-lighter
+  ),
+  $font-weights
+);
+
+$line-height-base:            16px;
+
+$h0-font-size:                $font-large;
+$h1-font-size:                $font-larger;
+$h1-font-size:                $font-larger;
+$h2-font-size:                $font-medium;
+$h3-font-size:                $font-small;
+$h4-font-size:                $font-smaller;
+$h5-font-size:                $font-x-small;
+$h6-font-size:                $font-xx-small;
+
+$headings-margin-bottom:      0;
+// $headings-font-family:        inherit !default;
+$headings-font-weight:        $font-weight-bold;
+$headings-line-height:        1.42;
+// $headings-color:              inherit !default;
+
+// $display1-size:               6rem !default;
+// $display2-size:               5.5rem !default;
+// $display3-size:               4.5rem !default;
+// $display4-size:               3.5rem !default;
+
+// $display1-weight:             300 !default;
+// $display2-weight:             300 !default;
+// $display3-weight:             300 !default;
+// $display4-weight:             300 !default;
+// $display-line-height:         $headings-line-height !default;
+
+// $lead-font-size:              ($font-size-base * 1.25) !default;
+// $lead-font-weight:            300 !default;
+
+// $small-font-size:             80% !default;
+
+// $text-muted:                  $gray-600 !default;
+
+// $blockquote-small-color:      $gray-600 !default;
+// $blockquote-small-font-size:  $small-font-size !default;
+// $blockquote-font-size:        ($font-size-base * 1.25) !default;
+
+// $hr-border-color:             rgba($black, .1) !default;
+// $hr-border-width:             $border-width !default;
+
+// $mark-padding:                .2em !default;
+
+// $dt-font-weight:              $font-weight-bold !default;
+
+// $kbd-box-shadow:              inset 0 -.1rem 0 rgba($black, .25) !default;
+// $nested-kbd-font-weight:      $font-weight-bold !default;
+
+// $list-inline-padding:         .5rem !default;
+
+// $mark-bg:                     #fcf8e3 !default;
+
+// $hr-margin-y:                 $spacer !default;
+
+
+// // Tables
+// //
+// // Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:          12px;
+// $table-cell-padding-sm:       .3rem !default;
+
+// $table-bg:                    transparent !default;
+// $table-accent-bg:             rgba($black, .05) !default;
+// $table-hover-bg:              rgba($black, .075) !default;
+// $table-active-bg:             $table-hover-bg !default;
+
+// $table-border-width:          $border-width !default;
+// $table-border-color:          $gray-300 !default;
+
+// $table-head-bg:               $gray-200 !default;
+// $table-head-color:            $gray-700 !default;
+
+// $table-dark-bg:               $gray-900 !default;
+// $table-dark-accent-bg:        rgba($white, .05) !default;
+// $table-dark-hover-bg:         rgba($white, .075) !default;
+// $table-dark-border-color:     lighten($gray-900, 7.5%) !default;
+// $table-dark-color:            $white !default;
+
+// $table-striped-order:         odd !default;
+
+// $table-caption-color:         $text-muted !default;
+
+// $table-bg-level:              -9 !default;
+// $table-border-level:          -6 !default;
+
